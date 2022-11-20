@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_CLIENTS } from "../queries/ClientQueries";
+import AddClient from "./AddClient";
 import ClientRow from "./ClientRow";
 import Spinner from "./Spinner";
 
@@ -16,6 +17,7 @@ const Client = () => {
       {!loading && !error && (
         <div>
           <h5> Clients: {data?.clients.length}</h5>
+          <AddClient />
           <table className="table">
             <thead>
               <tr>
